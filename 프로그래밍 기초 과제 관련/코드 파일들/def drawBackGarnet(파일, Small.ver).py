@@ -1,3 +1,5 @@
+# 스몰 사이즈 (실제 사용하는) 버전
+
 import turtle as t
 
 # 사용 리스트 초기화 및  펜 설정
@@ -20,7 +22,7 @@ def drawBackGarnet(color,isForward):
     # 마름모 3번 그려서 정육각형 그리기
     t.lt(30)
     for i in range(3):
-        t.fillcolor(colorList[colorNum][i])
+        t.fillcolor(colorList[backGarnet_Color_Num][i])
         t.begin_fill()
         t.fd(10)
         t.lt(120)
@@ -33,7 +35,7 @@ def drawBackGarnet(color,isForward):
         t.lt(180)
         
     # 테두리 부분 그리기
-    t.fillcolor(colorList[colorNum][3])
+    t.fillcolor(colorList[backGarnet_Color_Num][3])
     t.begin_fill()
     t.fd(10)
     t.rt(120)
@@ -65,11 +67,59 @@ def drawBackGarnet(color,isForward):
     t.fd(4)
     t.circle(1,120)
     t.fd(3)
-    t.circle(5,60)
+    t.circle(4,60)
     t.end_fill()
+    
     t.rt(180)
-    t.fd(4.7)
-    t.rt(90)
+    t.fd(3.7)
 
+    # 테두리에 세부적인 부분 추가
+    t.rt(60)
+    t.fd(10)
+    t.fillcolor(colorList[backGarnet_Color_Num][2])
+    t.begin_fill()
+    t.rt(120)
+    t.fd(10)
+    t.rt(120)
+    t.fd(2.8)
+    t.rt(76)
+    t.fd(8.7)
+    t.end_fill()
+    t.lt(135)
+    t.fd(9.9)
+
+    t.rt(60)
+    t.fd(10)
+    t.begin_fill()
+    t.lt(121)
+    t.fd(10)
+    t.lt(120)
+    t.fd(2.8)
+    t.lt(76)
+    t.fd(8.8)
+    t.end_fill()
+
+    t.fillcolor(colorList[backGarnet_Color_Num][1])
+    t.begin_fill()
+    t.rt(136)
+    t.fd(2.8)
+    t.lt(77)
+    t.fd(9.3)
+    t.lt(163)
+    t.fd(10.2)
+    t.end_fill()
+
+    t.fd(0.2)
+    t.lt(120)
+    t.fd(10.2)
+    t.lt(30.04)
+    
     #isForward가 False (정방향인가요? 가 False) 일때 180도 회전 (2)
-    if isForward == False: t.lt(180)
+    if isForward == False: t.lt(179.9)
+
+#테스트
+for i in range(16):
+    drawBackGarnet("black",True)
+    t.fd(17.2)
+    
+
