@@ -1,4 +1,6 @@
 # 빅 사이즈 버전
+'''차이점:  1. 스몰사이즈는 거북이를 복사하여 사용
+            2. 빅사이즈는 스몰사이즈에 비해 10배 큼'''
 
 import turtle as t
 
@@ -41,16 +43,9 @@ def drawBackGarnet(color,isForward):
     t.begin_fill()
     t.fd(100)
     t.rt(120)
-    t.fd(100)
-    t.rt(60)
-    t.fd(100)
-    t.rt(60)
-    t.fd(100)
-    t.rt(60)
-    t.fd(100)
-    t.rt(60)
-    t.fd(100)
-    t.rt(60)
+    for i in range(5):
+        t.fd(100)
+        t.rt(60)
     t.fd(60)
     t.rt(120)
     t.fd(40)
@@ -60,12 +55,9 @@ def drawBackGarnet(color,isForward):
     t.lt(60)
     t.fd(80)
     t.lt(60)
-    t.fd(70)
-    t.lt(60)
-    t.fd(70)
-    t.lt(60)
-    t.fd(70)
-    t.lt(60)
+    for i in range(3):
+        t.fd(70)
+        t.lt(60)
     t.fd(40)
     t.circle(10,120)
     t.fd(30)
@@ -110,15 +102,6 @@ def drawBackGarnet(color,isForward):
     t.lt(163)
     t.fd(102)
     t.end_fill()
-
-    # 거북이 위치 원상태로 복구
-    t.fd(2)
-    t.lt(120)
-    t.fd(102)
-    t.seth(0)
-
-    #isForward가 False (정방향인가요? 가 False) 일때 180도 회전 (2)
-    if isForward == False: t.lt(180)
 
 # 테스트
 drawBackGarnet("black",True)

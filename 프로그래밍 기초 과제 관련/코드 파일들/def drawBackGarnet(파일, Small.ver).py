@@ -2,9 +2,11 @@
 
 import turtle as t
 
-# 사용 리스트 초기화 및  펜 설정
+# 사용 리스트 초기화
 colorList = [["#f8f9f9","#aeaba2","#4b4c47","#180f00"],["#ffd8d8","#a76565","#893c3c","#832c2c"],["#d9dcff","#6369a6","#3d438a","#2c3382"]]
 backGarnet_Color_NumList = ["black", "red", "blue"]
+
+# 펜 설정
 t.speed(0)
 t.penup()
 t.hideturtle()
@@ -103,6 +105,6 @@ def drawBackGarnet(color,isForward):
     t0.end_fill()
 
 #테스트
-drawBackGarnet("black",False)
+drawBackGarnet("black",True)
     
 
