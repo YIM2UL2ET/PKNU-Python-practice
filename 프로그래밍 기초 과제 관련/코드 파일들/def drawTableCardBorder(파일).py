@@ -21,13 +21,9 @@ def drawTableCardBorder():
     t.pendown()
     
     # 그리기
-    t.lt(90)
-    t.fd(320)
-    t.lt(90)
-    t.fd(480)
-    t.lt(90)
-    t.fd(320)
-    t.lt(90)
-    t.fd(480)
+    for i in range(4):
+        t.lt(90)
+        if i % 2 == 0: t.fd(320)
+        else: t.fd(480)
 
 drawTableCardBorder()
