@@ -2,12 +2,13 @@ import turtle as t
 
 # 펜 설정
 t.speed(0)
-t.pendown()
+t.penup()
 t.hideturtle()
 
 #----------------------
 
 def drawBorder(color,size):
+    t.pendown()
     t.pencolor(color)
     t.pensize(size)
     for i in range(4):

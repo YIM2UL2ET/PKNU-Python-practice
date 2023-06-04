@@ -2,7 +2,7 @@ import turtle as t
 
 # 펜 설정
 t.speed(0)
-t.pendown()
+t.penup()
 t.hideturtle()
 
 # 사용 함수 설정 (1개)
@@ -20,7 +20,6 @@ def drawBorder(color,size):
 def drawBackCardBorder():
 
     # 그릴 위치로 이동
-    t.penup()
     t.fd(125)
     t.rt(90)
     t.fd(200)
@@ -30,6 +29,7 @@ def drawBackCardBorder():
     # 테두리 그리기
     drawBorder("white",10)
     drawBorder("grey",1)
+    t.penup()
 
 # 테스트
 drawBackCardBorder()
