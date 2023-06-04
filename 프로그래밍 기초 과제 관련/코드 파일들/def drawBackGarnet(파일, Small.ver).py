@@ -112,14 +112,12 @@ def drawBackGarnet(color,isForward):
     t.fd(0.2)
     t.lt(120)
     t.fd(10.2)
-    t.lt(30.04)
+    t.seth(0)
     
     #isForward가 False (정방향인가요? 가 False) 일때 180도 회전 (2)
     if isForward == False: t.lt(179.9)
 
 #테스트
-for i in range(16):
-    drawBackGarnet("black",True)
-    t.fd(17.2)
+drawBackGarnet("black",True)
     
 
