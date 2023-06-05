@@ -95,16 +95,15 @@ def drawBackGarnetDetails(t,colorList):
 
 #-------------------------------------------------------------------
 
-def drawBackGarnet(color,isForward):
-    tClone = t.clone()
+def drawBackGarnet(t,color,isForward):
     backGarnet_Color_Num = backGarnet_Color_NumList.index(color.lower())
-    if isForward == False: tClone.lt(180)
-    drawBackGarnetBody(tClone,colorList[backGarnet_Color_Num])
-    drawBackGarnetBorder(tClone,colorList[backGarnet_Color_Num][3])
-    drawBackGarnetDetails(tClone,colorList[backGarnet_Color_Num])
+    if isForward == False: t.lt(180)
+    drawBackGarnetBody(t,colorList[backGarnet_Color_Num])
+    drawBackGarnetBorder(t,colorList[backGarnet_Color_Num][3])
+    drawBackGarnetDetails(t,colorList[backGarnet_Color_Num])
     
 #테스트
     
-drawBackGarnet("black",True)
+drawBackGarnet(t,"black",True)
     
 
