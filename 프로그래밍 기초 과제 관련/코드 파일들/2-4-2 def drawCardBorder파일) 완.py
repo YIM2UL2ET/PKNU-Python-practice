@@ -2,13 +2,12 @@ import turtle as t
 
 # 펜 설정
 t.speed(0)
-t.penup()
+t.pendown()
 t.hideturtle()
 
 #----------------------
 
-def drawBorder(color,size):
-    t.pendown()
+def drawCardBorder(t,color,size):
     t.pencolor(color)
     t.pensize(size)
     for i in range(4):
@@ -17,4 +16,4 @@ def drawBorder(color,size):
         else: t.fd(250)
 
 # 테스트
-drawBorder("black",5)
+drawCardBorder(t,"black",5)
