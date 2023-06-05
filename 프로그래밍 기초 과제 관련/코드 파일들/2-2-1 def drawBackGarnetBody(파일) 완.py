@@ -2,7 +2,7 @@ import turtle as t
 
 # 2-2-1
 def drawBackGarnetBody(t,colorList):
-    t0.lt(30)
+    t.lt(30)
     for i in range(3):
         t.fillcolor(colorList[i])
         t.begin_fill()
