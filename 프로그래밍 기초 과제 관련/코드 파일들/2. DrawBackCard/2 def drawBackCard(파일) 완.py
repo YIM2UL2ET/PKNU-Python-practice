@@ -13,7 +13,7 @@ t.hideturtle()
 def moveto_drawPattern(t):
     t.bk(122)
     t.lt(90)
-    t.fd(210)
+    t.fd(200)
     t.rt(90)
 
 #--------------------------------
@@ -119,7 +119,7 @@ def moveOneSellDown(t):
 
 #--------------------------------
 
-# 2-4-2
+# 2-4-2 (공용α-2)
 def drawCardBorder(t,color,size):
     t.pencolor(color)
     t.pensize(size)
@@ -128,12 +128,12 @@ def drawCardBorder(t,color,size):
         if i % 2 == 0: t.fd(402)
         else: t.fd(250)
 
-# 2-4-1
+# 2-4-1 (공용α-1)
 def moveto_drawBackCardBorder(t):
     t.penup()
     t.fd(125)
     t.rt(90)
-    t.fd(200)
+    t.fd(211)
     t.lt(90)
     t.pendown()
 
@@ -159,7 +159,7 @@ def drawBackCard(t,position,color,answer):
         if lengthCount % 2 == 0: t.bk(9)
         else: t.fd(9)
     t.setpos(position)
-    drawCardBorder(t)
+    drawBackCardBorder(t)
 
 # 테스트
 drawBackCard(t,(0,0),"black","yes")
