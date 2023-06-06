@@ -1,5 +1,6 @@
 import turtle as t
 
+#함수 세팅
 def drawCardBorder(t,color,size):
     t.pencolor(color)
     t.pensize(size)

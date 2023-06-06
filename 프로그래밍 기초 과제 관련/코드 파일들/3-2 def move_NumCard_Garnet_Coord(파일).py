@@ -10,4 +10,3 @@ def move_NumCard_Garnet_Coord(t,numCoord):
     t.lt(90)
     t.fd(real_FrontGarnet_CoordList[numCoord][1])
     t.rt(90)
-    t.pendown()
