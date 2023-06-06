@@ -7,6 +7,7 @@ t.hideturtle()
 def draw2(t):
     t.pensize(4)
     t.penup()
+    t.fd(12)
     t.lt(90)
     t.bk(10)
     t.lt(90)
@@ -18,5 +19,5 @@ def draw2(t):
     t.circle(9,90)
     t.lt(90)
     t.fd(5)
-
+    
 draw2(t)

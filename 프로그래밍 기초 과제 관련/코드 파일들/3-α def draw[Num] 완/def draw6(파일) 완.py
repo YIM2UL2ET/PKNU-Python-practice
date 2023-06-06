@@ -6,6 +6,7 @@ t.hideturtle()
 
 def draw6(t):
     t.pensize(4)
+    t.bk(3)
     t.penup()
     t.lt(90)
     t.bk(10)
