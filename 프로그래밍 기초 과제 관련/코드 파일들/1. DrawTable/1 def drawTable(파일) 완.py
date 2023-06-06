@@ -1,7 +1,7 @@
 import turtle as t
 
 # 사용 리스트 초기화
-cardCoordList = [-800,-480,-160,160,480,800]
+cardXCoordList = [-800,-480,-160,160,480,800]
 
 # 펜 설정
 t.speed(0)
@@ -10,6 +10,7 @@ t.hideturtle()
 
 # 사용 함수 설정
 
+# 1-1
 def drawTableCardBorder(t):
     t.pencolor("#57abff")
     t.pensize(5)
@@ -21,7 +22,8 @@ def drawTableCardBorder(t):
     t.fd(320)
     t.lt(90)
     t.fd(480)
-    
+
+#1-2
 def moveto_drawTableCardBorder(t,position):
     t.penup()
     t.setpos(position)
@@ -31,6 +33,7 @@ def moveto_drawTableCardBorder(t,position):
     t.fd(240)
     t.pendown()
 
+#1-3
 def drawTableBorder(t):
     t.pencolor("#57abff")
     t.pensize(20)
@@ -41,16 +44,13 @@ def drawTableBorder(t):
         t.pendown()
         t.fd(2400)
 
-
 #--------------------------------------------------------
     
 def drawTable(t):
-
-    # 배경 색 설정 및 펜 설정
     t.bgcolor("#1e4e95")
     drawTableBorder(t)
     for location in range(6):
-        moveto_drawTableCardBorder(t,(cardCoordList[location],0))
+        moveto_drawTableCardBorder(t,(cardXCoordList[location],0))
         drawTableCardBorder(t)
 
 # 테스트

@@ -1,22 +1,28 @@
 import turtle as t
 
-# 사용 리스트 초기화 및  펜 설정
-colorList = [["#f8f9f9","#aeaba2","#4b4c47","#180f00"],["#ffd8d8","#a76565","#893c3c","#832c2c"],["#d9dcff","#6369a6","#3d438a","#2c3382"]]
-backGarnet_Color_NumList = ["black", "red", "blue"]
+# 펜 설정
 t.speed(0)
 t.penup()
 t.hideturtle()
 
-# 사용 함수 설정
+# 사용 리스트 t설정
+colorList = [["#f8f9f9","#aeaba2","#4b4c47","#180f00"],["#ffd8d8","#a76565","#893c3c","#832c2c"],["#d9dcff","#6369a6","#3d438a","#2c3382"]]
+backGarnet_Color_NumList = ["black", "red", "blue"]
 
-#2-1
+# 2-1
 def moveto_drawPattern(t):
     t.bk(122)
     t.lt(90)
     t.fd(205)
     t.rt(90)
 
-#--------------------------------
+# 2-2
+def drawBackGarnet(t,color,isForward):
+    backGarnet_Color_Num = backGarnet_Color_NumList.index(color.lower())
+    if isForward == False: t.lt(180)
+    drawBackGarnetBody(t,colorList[backGarnet_Color_Num])
+    drawBackGarnetBorder(t,colorList[backGarnet_Color_Num][3])
+    drawBackGarnetDetails(t,colorList[backGarnet_Color_Num])
 
 # 2-2-1
 def drawBackGarnetBody(t,colorList):
@@ -100,16 +106,6 @@ def drawBackGarnetDetails(t,colorList):
     t.fd(10.2)
     t.end_fill()
 
-# 2-2
-def drawBackGarnet(t,color,isForward):
-    backGarnet_Color_Num = backGarnet_Color_NumList.index(color.lower())
-    if isForward == False: t.lt(180)
-    drawBackGarnetBody(t,colorList[backGarnet_Color_Num])
-    drawBackGarnetBorder(t,colorList[backGarnet_Color_Num][3])
-    drawBackGarnetDetails(t,colorList[backGarnet_Color_Num])
-
-#--------------------------------
-
 # 2-3
 def moveOneSellDown(t):
     t.bk(270)
@@ -117,18 +113,14 @@ def moveOneSellDown(t):
     t.fd(15)
     t.lt(90)
 
-#--------------------------------
+# 2-4
+def drawBackCardBorder(t):
+    moveto_drawBackCardBorder(t)
+    drawCardBorder(t,"white",13)
+    drawCardBorder(t,"grey",1)
+    t.penup()
 
-# 2-4-2 (공용α-2)
-def drawCardBorder(t,color,size):
-    t.pencolor(color)
-    t.pensize(size)
-    for i in range(4):
-        t.circle(10,90)
-        if i % 2 == 0: t.fd(402)
-        else: t.fd(250)
-
-# 2-4-1 (공용α-1)
+# 2-4-1 (α-1)
 def moveto_drawBackCardBorder(t):
     t.penup()
     t.fd(125)
@@ -137,12 +129,14 @@ def moveto_drawBackCardBorder(t):
     t.lt(90)
     t.pendown()
 
-# 2-4
-def drawBackCardBorder(t):
-    moveto_drawBackCardBorder(t)
-    drawCardBorder(t,"white",13)
-    drawCardBorder(t,"grey",1)
-    t.penup()
+# 2-4-2 (α-2)
+def drawCardBorder(t,color,size):
+    t.pencolor(color)
+    t.pensize(size)
+    for i in range(4):
+        t.circle(10,90)
+        if i % 2 == 0: t.fd(402)
+        else: t.fd(250)
 
 #------------------------------
     

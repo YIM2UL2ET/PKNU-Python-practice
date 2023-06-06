@@ -6,9 +6,26 @@ t.penup()
 t.hideturtle()
 
 
-#함수 세팅
+#사용할 함수 설정
 
-# 3-1
+# 3-1 (α)
+def drawCardBackground(t):
+    moveto_drawBackCardBorder(t)
+    t.fillcolor("#ffffff")
+    t.begin_fill()
+    drawCardBorder(t,"#ffffff",13)
+    t.end_fill()
+
+# 3-1-1 (α-1)
+def moveto_drawBackCardBorder(t):
+    t.penup()
+    t.fd(125)
+    t.rt(90)
+    t.fd(211)
+    t.lt(90)
+    t.pendown()
+    
+# 3-1-2 (α-2)
 def drawCardBorder(t,color,size):
     t.pencolor(color)
     t.pensize(size)
@@ -17,22 +34,7 @@ def drawCardBorder(t,color,size):
         if i % 2 == 0: t.fd(402)
         else: t.fd(250)
 
-def moveto_drawBackCardBorder(t):
-    t.penup()
-    t.fd(125)
-    t.rt(90)
-    t.fd(211)
-    t.lt(90)
-    t.pendown()
-
-def drawCardBackground(t):
-    moveto_drawBackCardBorder(t)
-    t.fillcolor("#ffffff")
-    t.begin_fill()
-    drawCardBorder(t,"#ffffff",13)
-    t.end_fill()
-
-#3-2
+# 3-2
 def move_NumCard_Garnet_Coord(t,numCoord):
     t.penup()
     t.seth(0)
@@ -41,7 +43,13 @@ def move_NumCard_Garnet_Coord(t,numCoord):
     t.fd(real_FrontGarnet_CoordList[numCoord][1])
     t.rt(90)
 
-#3-3
+# 3-3
+def drawFrontGarnet(t,isForward):
+    if isForward == False:t.rt(180)
+    drawFrontGarnetBody(t)
+    drawFrontGarnetBorder(t)
+
+# 3-3-1
 def drawFrontGarnetBody(t):
     t.lt(30)
     for bodyColor in ["#ffffff","#d6cfc9","#68645e"]:
@@ -57,6 +65,7 @@ def drawFrontGarnetBody(t):
         t.end_fill()
         t.lt(180)
 
+# 3-3-2
 def drawFrontGarnetBorder(t):
     t.fillcolor("#000000")
     t.begin_fill()
@@ -93,12 +102,7 @@ def drawFrontGarnetBorder(t):
     t.end_fill()
     t.seth(0)
 
-def drawFrontGarnet(t,isForward):
-    if isForward == False:t.rt(180)
-    drawFrontGarnetBody(t)
-    drawFrontGarnetBorder(t)
-
-#3-4
+# 3-4
 def moveto_drawNum(t):
     t.penup()
     t.fd(115)
@@ -106,7 +110,7 @@ def moveto_drawNum(t):
     t.fd(185)
     t.rt(90)
 
-#3-α
+# 3-5-0 
 def drawZero(t):
     t.pensize(2)
     t.fillcolor("#000000")
@@ -137,6 +141,7 @@ def drawZero(t):
     t.circle(55,90)
     t.end_fill()
 
+# 3-5-1
 def draw1(t):
     t.pensize(4)
     t.penup()
@@ -147,6 +152,7 @@ def draw1(t):
     t.lt(150)
     t.fd(5)
 
+# 3-5-2
 def draw2(t):
     t.pensize(4)
     t.penup()
@@ -163,6 +169,7 @@ def draw2(t):
     t.lt(90)
     t.fd(5)
 
+# 3-5-3
 def draw3(t):
     t.pensize(4)
     t.penup()
@@ -177,6 +184,7 @@ def draw3(t):
     t.circle(4,180)
     t.fd(2)
 
+# 3-5-4
 def draw4(t):
     t.pensize(4)
     t.penup()
@@ -189,6 +197,7 @@ def draw4(t):
     t.lt(125)
     t.fd(10)
 
+# 3-5-5
 def draw5(t):
     t.pensize(4)
     t.penup()
@@ -205,6 +214,7 @@ def draw5(t):
     t.rt(60)
     t.fd(6)
 
+# 3-5-6
 def draw6(t):
     t.pensize(4)
     t.bk(3)
@@ -227,6 +237,7 @@ def draw6(t):
     t.rt(70)
     t.fd(3)
 
+# 3-5-7
 def draw7(t):
     t.pensize(4)
     t.penup()
@@ -238,6 +249,7 @@ def draw7(t):
     t.lt(110)
     t.fd(10)
 
+# 3-5-8
 def draw8(t):
     t.pensize(4)
     t.penup()
@@ -253,6 +265,7 @@ def draw8(t):
     t.pendown()
     t.circle(5,360)
 
+# 3-5-9
 def draw9(t):
     t.pensize(4)
     t.penup()
@@ -277,6 +290,7 @@ def draw9(t):
     t.rt(30)
     t.fd(2)
 
+# 3-5-10
 def draw10(t):
     t.pensize(4)
     t.penup()
@@ -304,7 +318,7 @@ def draw10(t):
     t.fd(5)
     t.circle(6,80)
 
-# 리스트 세팅
+# 사용 리스트 세팅
 temporary_FronGarnet_CoordList =  [0,[9],[7,11],[7,9,11],[1,5,13,17],[1,5,9,13,17],[0,3,6,12,15,18],[0,3,6,8,12,15,18],[0,3,6,8,10,12,15,18],[0,2,4,6,9,12,14,16,18],[0,2,4,6,19,20,12,14,16,18]]
 real_FrontGarnet_CoordList = [[-45,120],[-45,80],[-45,40],[-45,0],[-45,-40],[-45,-80],[-45,-120],[0,100],[0,60],[0,0],[0,-60],[0,-100],[45,120],[45,80],[45,40],[45,0],[45,-40],[45,-80],[45,-120],[0,80],[0,-80]]
 numberDrawing_Function_List = [drawZero, draw1, draw2, draw3, draw4, draw5, draw6, draw7, draw8, draw9, draw10]
