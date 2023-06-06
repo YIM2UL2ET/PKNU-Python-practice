@@ -140,7 +140,7 @@ def moveto_drawBackCardBorder(t):
 # 2-4
 def drawBackCardBorder(t):
     moveto_drawBackCardBorder(t)
-    drawCardBorder(t,"white",10)
+    drawCardBorder(t,"white",13)
     drawCardBorder(t,"grey",1)
     t.penup()
 

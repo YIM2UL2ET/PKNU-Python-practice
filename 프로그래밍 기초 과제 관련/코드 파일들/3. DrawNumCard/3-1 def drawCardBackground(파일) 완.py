@@ -22,7 +22,7 @@ def drawCardBackground(t):
     moveto_drawBackCardBorder(t)
     t.fillcolor("#ffffff")
     t.begin_fill()
-    drawCardBorder(t,"#ffffff",10)
+    drawCardBorder(t,"#ffffff",13)
     t.end_fill()
 
 #테스트
