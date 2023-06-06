@@ -13,7 +13,7 @@ t.hideturtle()
 def moveto_drawPattern(t):
     t.bk(122)
     t.lt(90)
-    t.fd(200)
+    t.fd(205)
     t.rt(90)
 
 #--------------------------------
