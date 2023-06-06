@@ -68,5 +68,3 @@ def drawFrontGarnet(t,isForward):
 #테스트
     
 drawFrontGarnet(t,True)
-t.setpos(100,0)
-drawFrontGarnet(t,False)

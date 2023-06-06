@@ -15,7 +15,7 @@ def drawCardBorder(t,color,size):
         if i % 2 == 0: t.fd(402)
         else: t.fd(250)
 
-def moveto_drawBackCardBorder(t):
+def moveto_drawCardBorder(t):
     t.penup()
     t.fd(125)
     t.rt(90)
@@ -26,7 +26,7 @@ def moveto_drawBackCardBorder(t):
 #------------------------------
 
 def drawBackCardBorder(t):
-    moveto_drawBackCardBorder(t)
+    moveto_drawCardBorder(t)
     drawCardBorder(t,"white",10)
     drawCardBorder(t,"grey",1)
     t.penup()
