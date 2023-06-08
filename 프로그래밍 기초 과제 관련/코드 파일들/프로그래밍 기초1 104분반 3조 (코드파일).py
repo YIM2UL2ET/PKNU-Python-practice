@@ -1,4 +1,5 @@
 import turtle as t
+#프로그래밍기초1 104분반 3조 과제 (202313431 임승호)
 
 #펜 설정==========================================================
 
@@ -16,18 +17,16 @@ def drawTable(t):
         moveto_drawTableCardBorder(t,(cardsXCoordList[location],0))
         drawTableCardBorder(t)
 
-# 1-1
-def drawTableCardBorder(t):
+#1-1
+def drawTableBorder(t):
     t.pencolor("#57abff")
-    t.pensize(5)
-    t.lt(90)
-    t.fd(320)
-    t.lt(90)
-    t.fd(480)
-    t.lt(90)
-    t.fd(320)
-    t.lt(90)
-    t.fd(480)
+    t.pensize(20)
+    for difference in [300,-300]:
+        t.penup()
+        t.setpos(-1200, difference)
+        t.seth(0)
+        t.pendown()
+        t.fd(2400)
 
 #1-2
 def moveto_drawTableCardBorder(t,position):
@@ -39,16 +38,18 @@ def moveto_drawTableCardBorder(t,position):
     t.fd(240)
     t.pendown()
 
-#1-3
-def drawTableBorder(t):
+# 1-3
+def drawTableCardBorder(t):
     t.pencolor("#57abff")
-    t.pensize(20)
-    for difference in [300,-300]:
-        t.penup()
-        t.setpos(-1200, difference)
-        t.seth(0)
-        t.pendown()
-        t.fd(2400)
+    t.pensize(5)
+    t.lt(90)
+    t.fd(320)
+    t.lt(90)
+    t.fd(480)
+    t.lt(90)
+    t.fd(320)
+    t.lt(90)
+    t.fd(480)
 
 #---------------------------------------------------------------------
 
@@ -78,7 +79,7 @@ def moveto_drawPattern(t):
 
 # 2-2
 def drawBackGarnet(t,color,isForward):
-    backGarnet_Color_Num = backGarnet_Color_NumList.index(color.lower())
+    backGarnet_Color_Num = ["black", "red", "blue"].index(color.lower())
     if isForward == False: t.lt(180)
     drawBackGarnetBody(t,backGarnet_Color_List[backGarnet_Color_Num])
     drawBackGarnetBorder(t,backGarnet_Color_List[backGarnet_Color_Num][3])
@@ -513,7 +514,7 @@ def drawOperatorSymbolCard(t,position,operatorSymbol):
     t.setpos(position)
     t.seth(0)
     drawCardBackground(t.clone())
-    operatorSymbolDrawing_Function_List[operatiorSymbol_Number_Return_List.index(operatorSymbol)](t.clone())
+    operatorSymbolDrawing_Function_List[["+", "-", "*", "/"].index(operatorSymbol)](t.clone())
 
 # 4-1 (α)
 
@@ -609,8 +610,6 @@ cardDetailList = []
 hiddenAnswerList = []
 listOfQuestionWords = ["카드뒷면: Black, Red, Blue 중 하나의 색 입력","숫자카드: 0~10 중 하나의 숫자 입력","연산기호카드: +,-,*,/ 중 하나의 연산기호 입력"]
 
-backGarnet_Color_NumList = ["black", "red", "blue"]
-operatiorSymbol_Number_Return_List = ["+", "-", "*", "/"]
 cardsXCoordList = [-800,-480,-160,160,480,800]
 temporary_FronGarnet_CoordList =  [0,[9],[7,11],[7,9,11],[1,5,13,17],[1,5,9,13,17],[0,3,6,12,15,18],[0,3,6,8,12,15,18],[0,3,6,8,10,12,15,18],[0,2,4,6,9,12,14,16,18],[0,2,4,6,19,20,12,14,16,18]]
 real_FrontGarnet_CoordList = [[-45,120],[-45,80],[-45,40],[-45,0],[-45,-40],[-45,-80],[-45,-120],[0,100],[0,60],[0,0],[0,-60],[0,-100],[45,120],[45,80],[45,40],[45,0],[45,-40],[45,-80],[45,-120],[0,80],[0,-80]]
@@ -645,10 +644,7 @@ for count in range(6):
     if cardTypeList[count] == "p": cardDetailList.append("Pass")
     else: cardDetailList.append(input("\n방금 입력한 카드에 대한 데이터를 입력하세요. (방금 넣은 카드:%s) : "%(listOfQuestionWords[["b","n","o"].index(cardTypeList[count])])))
     if cardTypeList[count] == "b": hiddenAnswerList.append(input("\n이대로 하시겠습니까? (Yes or No) : "))
-drawPicture(cardTypeList, cardDetailList, hiddenAnswerList)
-
-
-#drawNum들에 pencolor"black" 추가
-#변수명 변경 colorList>>backGarnet_Color_List (2-2)
-#cardsXCoordList ,확인
-#순서도 변동 확인하기 (금요일)
+try: drawPicture(cardTypeList, cardDetailList, hiddenAnswerList)
+except: print("\n그림을 그리는 도중 오류가 발생했습니다. 카드 데이터 정보를 제대로 입력하지 않았을 수도 있습니다.")
+else: print("\n그림이 완성되었습니다.")
+finally: print("\n프로그램 실행이 종료되었습니다.")
